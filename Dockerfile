@@ -19,6 +19,6 @@ RUN python get-pip.py
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
-
+RUN pip install --upgrade git
 RUN pip install --upgrade -r /code/requirements.txt
 

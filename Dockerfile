@@ -4,7 +4,9 @@ ENV TZ=Europe/Berlin
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update
-RUN apt install -y git ffmpeg wget bash python3.10-dev python3.10 curl
+RUN apt install -y python3.10 curl
+RUN apt-get autoremove -y
+RUN apt-get autoclean -y       
 
 RUN ln -s /usr/bin/python3.10 /usr/bin/python && \
     ln -s /usr/bin/python3.10 /usr/bin/python3 && \
@@ -18,5 +20,5 @@ WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
 
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+RUN pip install --upgrade -r /code/requirements.txt
 

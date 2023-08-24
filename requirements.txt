@@ -1,3 +1,4 @@
+git
 --extra-index-url https://download.pytorch.org/whl/nightly/cu118
 torch
 git+https://github.com/huggingface/optimum.git
